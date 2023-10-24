@@ -1,0 +1,26 @@
+<div class="container-fluid bg-dark">
+  <div class="ms-3 row">
+    <div
+      class="col-3 card h-70 mx-3 my-3"
+      style="height: 30rem; width: 18rem"
+      *ngFor="let product of Products"
+    >
+      <img
+        [src]="product.image"
+        class="card-img-top py-2"
+        height="250px"
+        width="50px"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text fs-5">Best Price: ₹ {{ product.price }} *</p>
+        <a
+          class="w-100 btn btn-secondary align-bottom btn-dark"
+          (click)="addToCart(product.id)"
+          >Add to Cart</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
